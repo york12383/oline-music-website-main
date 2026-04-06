@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.music.mapper.SingerMapper">
+  <resultMap id="BaseResultMap" type="com.example.music.model.domain.Singer">
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="sex" property="sex" jdbcType="TINYINT" />
+    <result column="pic" property="pic" jdbcType="VARCHAR" />
+    <result column="birth" property="birth" jdbcType="TIMESTAMP" />
+    <result column="location" property="location" jdbcType="VARCHAR" />
+    <result column="introduction" property="introduction" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, name, sex, pic, birth, location, introduction
+  </sql>
+
+  <!-- 查询拥有最新歌曲的歌手 -->
+  <select id="selectHotSingers" resultType="com.example.music.model.domain.Singer">
+    SELECT s.* 
+    FROM singer s 
+    INNER JOIN song so ON s.id = so.singer_id 
+    GROUP BY s.id 
+    ORDER BY MAX(so.create_time) DESC 
+    LIMIT #{limit}
+  </select>
+
+</mapper>

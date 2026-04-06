@@ -1,0 +1,202 @@
+@import "@/assets/css/var.scss";
+@import "@/assets/css/global.scss";
+
+.auth-page {
+  display: flex;
+  align-items: center;
+  min-height: calc(100vh - 88px - 180px);
+  padding-top: clamp(8px, 1vw, 16px);
+}
+
+.auth-layout {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(360px, 480px);
+  gap: clamp(20px, 3vw, 36px);
+  align-items: center;
+}
+
+.sign {
+  width: 100%;
+  max-width: 480px;
+  margin-left: auto;
+  align-self: center;
+  padding: clamp(1.5rem, 2.6vw, 2.35rem);
+  border-radius: 32px;
+  background: var(--app-panel-bg);
+  border: 1px solid var(--app-panel-border);
+  box-shadow: var(--app-panel-shadow);
+}
+
+.sign-head {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.6rem;
+}
+
+.sign-head-copy h1 {
+  margin: 0;
+  color: var(--app-title);
+  font-size: clamp(1.9rem, 2vw, 2.4rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.sign-head-copy p {
+  margin: 0.7rem 0 0;
+  color: var(--app-text-muted);
+  font-size: 0.98rem;
+  line-height: 1.8;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-form:deep(.el-form-item) {
+  margin-bottom: 16px;
+}
+
+.auth-form:deep(.el-form-item__label) {
+  color: var(--app-text);
+  font-size: 0.93rem;
+  font-weight: 700;
+  padding-right: 14px;
+}
+
+.auth-form:deep(.el-input__wrapper),
+.auth-form:deep(.el-textarea__inner),
+.auth-form:deep(.el-select__wrapper) {
+  min-height: 52px;
+  border-radius: 18px;
+  background: var(--app-chip-bg-muted);
+  border: 1px solid transparent;
+  box-shadow: none;
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.auth-form:deep(.el-textarea__inner) {
+  min-height: 104px;
+  padding-top: 14px;
+}
+
+.auth-form:deep(.el-input__wrapper.is-focus),
+.auth-form:deep(.el-select__wrapper.is-focused),
+.auth-form:deep(.el-textarea__inner:focus) {
+  border-color: var(--app-panel-border-strong);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--app-accent-strong) 12%, transparent);
+  transform: translateY(-1px);
+}
+
+.auth-form:deep(.el-input__inner),
+.auth-form:deep(.el-textarea__inner),
+.auth-form:deep(.el-select__placeholder),
+.auth-form:deep(.el-radio__label) {
+  color: var(--app-text);
+}
+
+.auth-form:deep(.el-date-editor.el-input),
+.auth-form:deep(.el-date-editor.el-input__wrapper) {
+  width: 100%;
+}
+
+.auth-form:deep(.el-radio-group) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.auth-form:deep(.el-radio) {
+  margin-right: 0;
+  padding: 0.8rem 1rem;
+  border-radius: 16px;
+  background: var(--app-chip-bg-muted);
+  border: 1px solid transparent;
+}
+
+.sign-btn {
+  margin-top: 10px;
+}
+
+.sign-btn:deep(.el-form-item__content) {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.sign-btn-signin:deep(.auth-btn-ghost) {
+  grid-column: 1 / -1;
+}
+
+.sign-btn:deep(.el-button) {
+  min-height: 48px;
+  width: 100%;
+  margin: 0;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+.sign-btn:deep(.auth-btn-primary) {
+  border: none;
+  color: var(--app-button-primary-text);
+  background: linear-gradient(135deg, var(--app-accent-strong), var(--app-accent));
+  box-shadow: 0 14px 30px color-mix(in srgb, var(--app-accent-strong) 20%, transparent);
+}
+
+.sign-btn:deep(.auth-btn-secondary) {
+  color: var(--app-text);
+  background: var(--app-button-secondary-bg);
+  border: 1px solid var(--app-panel-border);
+}
+
+.sign-btn:deep(.auth-btn-ghost) {
+  color: var(--app-text-muted);
+  background: transparent;
+  border: 1px dashed var(--app-panel-border-strong);
+}
+
+@media screen and (max-width: 1100px) {
+  .auth-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .sign {
+    max-width: none;
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: $sm) {
+  .auth-page {
+    min-height: auto;
+  }
+
+  .auth-layout {
+    gap: 16px;
+  }
+
+  .sign {
+    padding: 1.25rem;
+    border-radius: 28px;
+  }
+
+  .sign-head-copy h1 {
+    font-size: 1.7rem;
+  }
+
+  .auth-form:deep(.el-form-item__label) {
+    display: inline-flex;
+    align-items: center;
+    min-height: 36px;
+  }
+
+  .sign-btn:deep(.el-form-item__content) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .sign-btn-signin:deep(.auth-btn-ghost) {
+    grid-column: auto;
+  }
+}

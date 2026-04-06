@@ -247,6 +247,68 @@ oline-music-website-main
 - 本地静态资源读取与上传
 - 远程歌曲导入与本地库修复辅助能力
 
+## 项目界面展示
+
+以下截图来自当前版本系统页面，用于展示用户端与后台管理端的主要功能界面。
+
+### 用户端界面
+
+#### 首页推荐
+![用户端首页推荐](img/screenshots/frontend-home.png)
+
+#### 歌单广场
+![用户端歌单广场](img/screenshots/frontend-songlist.png)
+
+#### 排行榜
+![用户端排行榜](img/screenshots/frontend-ranking.png)
+
+#### 歌手聚焦
+![用户端歌手聚焦](img/screenshots/frontend-singer.png)
+
+#### 我的收藏
+![用户端我的收藏](img/screenshots/frontend-collection.png)
+
+#### 个人中心与最近播放
+![用户端个人中心与最近播放](img/screenshots/frontend-profile.png)
+
+#### 我的歌单管理
+![用户端我的歌单管理](img/screenshots/frontend-my-playlists.png)
+
+#### 歌词播放页
+![用户端歌词播放页](img/screenshots/frontend-lyric.png)
+
+#### AI 小助手
+![用户端 AI 小助手](img/screenshots/frontend-ai-assistant.png)
+
+### 后台管理端界面
+
+#### 系统首页
+![后台系统首页](img/screenshots/admin-dashboard.png)
+
+#### 轮播图管理
+![后台轮播图管理](img/screenshots/admin-banner-management.png)
+
+#### 用户管理
+![后台用户管理](img/screenshots/admin-user-management.png)
+
+#### 管理员管理
+![后台管理员管理](img/screenshots/admin-administrator-management.png)
+
+#### 歌手管理
+![后台歌手管理](img/screenshots/admin-singer-management.png)
+
+#### 歌单管理
+![后台歌单管理](img/screenshots/admin-songlist-management.png)
+
+#### 歌曲管理
+![后台歌曲管理](img/screenshots/admin-song-management.png)
+
+#### 评分管理
+![后台评分管理](img/screenshots/admin-rating-management.png)
+
+#### 反馈管理
+![后台反馈管理](img/screenshots/admin-feedback-management.png)
+
 ## 本地运行说明
 
 ### 环境要求
